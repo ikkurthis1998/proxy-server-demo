@@ -1,9 +1,14 @@
 const axios = require("axios");
+const cors = require("cors");
 const express = require("express");
 
 const app = express();
+
+const port = 3000;
+
+app.use(cors());
+
 app.get("/", async (req, res) => {
-	req.setTimeout(500000);
 	try {
 		const response = await axios.get(
 			"https://random-value-generator.herokuapp.com/"
